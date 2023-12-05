@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Bahnschrift Light SemiCondensed</family>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Facul-Tech</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:#4070f4;</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QFrame" name="frame_2">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:6px;
+background-color:white;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="6" column="0" colspan="5">
+       <widget class="QFrame" name="frame">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QPushButton" name="btn_insertar">
+           <property name="font">
+            <font>
+             <family>Bahnschrift Light SemiCondensed</family>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  line-height: 18px;
+  background-color: #4070f4;
+  color:white;
+font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;}
+
+QPushButton:hover{
+  background-color: darkblue;}</string>
+           </property>
+           <property name="text">
+            <string>Insertar</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_actualizar">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{ 
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  line-height: 18px;
+  background-color: #4070f4;
+  color:white;
+font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;}
+
+QPushButton:hover{
+  background-color: darkblue;}</string>
+           </property>
+           <property name="text">
+            <string>Actualizar</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_eliminar">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  line-height: 18px;
+  background-color: #4070f4;
+  color:white;
+font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;}
+
+QPushButton:hover{
+  background-color: darkblue;}</string>
+           </property>
+           <property name="text">
+            <string>Eliminar</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_cerrar">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  line-height: 18px;
+  background-color: #4070f4;
+  color:white;
+font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;}
+
+QPushButton:hover{
+  background-color: darkblue;}</string>
+           </property>
+           <property name="text">
+            <string>Cerrar</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLineEdit" name="txt_local">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+font: 25 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+margin:0 5 5 5;
+outline:none;
+border:1px solid #aaa;
+padding:7px;
+border-radius: 5px;
+color: #333;
+}
+
+QLineEdit:focus{
+border: 1px solid #007acc;
+
+}
+</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Ingrese el local</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="4">
+       <widget class="QRadioButton" name="rbtn_intel">
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light SemiCondensed</family>
+          <pointsize>7</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 7pt &quot;Bahnschrift Light SemiCondensed&quot;;
+margin: 0 5px 0 5px;
+
+</string>
+        </property>
+        <property name="text">
+         <string>INTEL</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">margin: 5px;
+font: 13pt &quot;Bahnschrift&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Computadoras sin Internet</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="styleSheet">
+         <string notr="true">margin: 10px 10px 5px 5px;
+font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Capacidad Disco Duro</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QRadioButton" name="rbtn_amd">
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light SemiCondensed</family>
+          <pointsize>7</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 7pt &quot;Bahnschrift Light SemiCondensed&quot;;
+margin: 0 5px 0 5px;
+
+</string>
+        </property>
+        <property name="text">
+         <string>AMD</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="label_7">
+        <property name="styleSheet">
+         <string notr="true">margin: 10px 10px 5px 5px;
+font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Capacidad Ram</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QLabel" name="label_9">
+        <property name="styleSheet">
+         <string notr="true">margin: 10px 10px 5px 5px;
+font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Fecha Adquisición</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLineEdit" name="txt_espacio_disco_duro">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+font: 25 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+margin:0 5 5 5;
+outline:none;
+border:1px solid #aaa;
+padding:7px;
+border-radius: 5px;
+color: #333;
+}
+
+QLineEdit:focus{
+border: 1px solid #007acc;
+
+}
+</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Ingrese capacidad de Disco</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="txt_ram_integrada">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+font: 25 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+margin:0 5 5 5;
+outline:none;
+border:1px solid #aaa;
+padding:7px;
+border-radius: 5px;
+color: #333;
+}
+
+QLineEdit:focus{
+border: 1px solid #007acc;
+
+}
+</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Ingrese capacidad de Ram</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QDateEdit" name="date_fecha_adquisicion">
+        <property name="styleSheet">
+         <string notr="true">QDateEdit {
+font: 25 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+margin:0 5 5 5;
+outline:none;
+border:1px solid #aaa;
+padding:7px;
+border-radius: 5px;
+color: #333;}
+
+
+
+</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">margin: 10px 10px 5px 5px;
+font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Nombre de la Red</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" colspan="5">
+       <widget class="QTableWidget" name="tabla_computadoras">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QHeaderView::section{
+font: 8pt &quot;Bahnschrift Light SemiCondensed&quot;;
+}
+
+QTableWidget QtableCornerButton::section{
+font: 8pt &quot;Bahnschrift Light SemiCondensed&quot;;
+border: solid 1px black;
+
+
+}
+QTableWidget{font: 8pt &quot;Bahnschrift Light SemiCondensed&quot;;
+border:solid 1px gray;
+margin:30px 0 0 150px;}
+</string>
+        </property>
+        <property name="tabKeyNavigation">
+         <bool>false</bool>
+        </property>
+        <column>
+         <property name="text">
+          <string>Nombre de la Red</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Dirección IP</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Local</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Tipo de Procesador</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Capacidad Disco Duro</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Capacidad de Ram</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Fecha de Adquisición</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item row="1" column="3" colspan="2">
+       <widget class="QLabel" name="label_5">
+        <property name="styleSheet">
+         <string notr="true">margin: 10px 10px 5px 5px;
+font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Tipo de Procesador</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLineEdit" name="txt_nombre_red">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+font: 25 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+margin:0 5 5 5;
+outline:none;
+border:1px solid #aaa;
+padding:7px;
+border-radius: 5px;
+color: #333;
+}
+
+QLineEdit:focus{
+border: 1px solid #007acc;
+
+}
+</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Ingrese nombre de Red</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="txt_ip">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+font: 25 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+margin:0 5 5 5;
+outline:none;
+border:1px solid #aaa;
+padding:7px;
+border-radius: 5px;
+color: #333;
+}
+
+QLineEdit:focus{
+border: 1px solid #007acc;
+
+}
+</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Ingrese dirección IP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_3">
+        <property name="styleSheet">
+         <string notr="true">margin: 10px 10px 5px 5px;
+font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Dirección IP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_4">
+        <property name="styleSheet">
+         <string notr="true">margin: 10px 10px 5px 5px;
+font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Local</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

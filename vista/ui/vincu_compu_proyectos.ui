@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>488</width>
+    <height>328</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">  background-color: #4070f4;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true">border-radius:6px;
+background-color:white;
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QFrame" name="frame_7">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="styleSheet">
+            <string notr="true">font: 11pt &quot;Bahnschrift Light SemiCondensed&quot;;
+margin: 5px 0 0 0;
+</string>
+           </property>
+           <property name="text">
+            <string>Vincular y Desvincular Computadoras a Proyectos</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_2">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QFrame" name="frame_3">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="styleSheet">
+               <string notr="true">
+font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+</string>
+              </property>
+              <property name="text">
+               <string>Nombre de Proyecto</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="txt_nombre_proyecto">
+              <property name="styleSheet">
+               <string notr="true">QLineEdit{
+font: 25 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+outline:none;
+border:1px solid #aaa;
+padding:5px;
+border-radius: 5px;
+color: #333;
+}
+
+QLineEdit:focus{
+border: 1px solid #007acc;
+
+}
+</string>
+              </property>
+              <property name="placeholderText">
+               <string>Ingrese nombre del proyecto</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_4">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="styleSheet">
+               <string notr="true">
+font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+</string>
+              </property>
+              <property name="text">
+               <string>IP de Computadora</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="txt_ip">
+              <property name="styleSheet">
+               <string notr="true">QLineEdit{
+font: 25 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+outline:none;
+border:1px solid #aaa;
+padding:5px;
+border-radius: 5px;
+color: #333;
+}
+
+QLineEdit:focus{
+border: 1px solid #007acc;
+
+}
+</string>
+              </property>
+              <property name="placeholderText">
+               <string>Ingrese IP de la computadora</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_5">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="styleSheet">
+               <string notr="true">
+font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+</string>
+              </property>
+              <property name="text">
+               <string>Usuarios</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="txt_usuarios">
+              <property name="styleSheet">
+               <string notr="true">QLineEdit{
+font: 25 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+outline:none;
+border:1px solid #aaa;
+padding:5px;
+border-radius: 5px;
+color: #333;
+}
+
+QLineEdit:focus{
+border: 1px solid #007acc;
+
+}
+</string>
+              </property>
+              <property name="placeholderText">
+               <string>Ingrese lista de usuarios</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_6">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QTableWidget" name="tabla_vinculacion">
+           <property name="styleSheet">
+            <string notr="true">QHeaderView::section{
+font: 8pt &quot;Bahnschrift Light SemiCondensed&quot;;
+margin-left:25px;
+}
+
+QTableWidget QtableCornerButton::section{
+font: 8pt &quot;Bahnschrift Light SemiCondensed&quot;;
+border: solid 1px black;
+margin-left:25px;
+
+
+}
+QTableWidget{font: 8pt &quot;Bahnschrift Light SemiCondensed&quot;;
+border:solid 1px gray;
+margin-left:25px;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="txt_respuesta">
+        <property name="styleSheet">
+         <string notr="true">
+font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_8">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QPushButton" name="btn_vincular">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  line-height: 18px;
+  background-color: #4070f4;
+  color:white;
+font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;
+
+}
+
+QPushButton:hover{
+  background-color: darkblue;}</string>
+           </property>
+           <property name="text">
+            <string>Vincular</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_desvincular">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{ 
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  line-height: 18px;
+  background-color: #4070f4;
+  color:white;
+font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;
+
+}
+
+QPushButton:hover{
+  background-color: darkblue;}</string>
+           </property>
+           <property name="text">
+            <string>Desvincular</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

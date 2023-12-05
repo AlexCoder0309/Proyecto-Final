@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="iconos">
+    <file>2.jpeg</file>
+    <file>acerca.png</file>
+    <file>funcionalidades.png</file>
+    <file>gestionar.png</file>
+  </qresource>
+</RCC>
