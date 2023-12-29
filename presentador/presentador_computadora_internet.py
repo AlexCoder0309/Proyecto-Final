@@ -1,3 +1,4 @@
+from PyQt5.QtCore import QDate
 from modelo.computadora_internet import ComputadoraInternet
 from vista.gestionar_computadoras_internet import CRUDComputadorasInternet
 
@@ -36,11 +37,15 @@ class PresentadorComputadorasInternet:
             microprocesador = self.__vista.valor_microprocesador
             espacio_disco_duro = self.__vista.valor_espacio_disco_duro
             ram_integrada = self.__vista.valor_ram_integrada
-            fecha_adquisicion = self.__vista.valor_fecha_adquisicion
+            fecha_adquisicion = self.__vista.valor_fecha_adquisicion.toPyDate()
+            fecha_adquisicion = fecha_adquisicion.strftime('%d-%m-%Y')
             mac = self.__vista.valor_mac
             hora_inicio = self.__vista.valor_hora_inicio
             hora_final = self.__vista.valor_hora_final
-
+            if self.__modelo.existe_valor_en_lista(self.__modelo.lista_computadoras_internet(), 'ip', ip):
+                raise Exception('La dirección IP ya existe. Ingrese una dirección IP única.')
+            if self.__modelo.existe_valor_en_lista(self.__modelo.lista_computadoras(), 'ip', ip):
+                raise Exception('La dirección IP ya existe en otra computadora. Ingrese una dirección IP única.')
             computadora = ComputadoraInternet(nombre_red, ip, local, microprocesador, espacio_disco_duro, ram_integrada, fecha_adquisicion, mac, hora_inicio, hora_final)
             self.__modelo.insertar_computadora_internet(computadora)
 
@@ -63,11 +68,11 @@ class PresentadorComputadorasInternet:
             microprocesador = self.__vista.valor_microprocesador
             espacio_disco_duro = self.__vista.valor_espacio_disco_duro
             ram_integrada = self.__vista.valor_ram_integrada
-            fecha_adquisicion = self.__vista.valor_fecha_adquisicion
+            fecha_adquisicion = self.__vista.valor_fecha_adquisicion.toPyDate()
+            fecha_adquisicion = fecha_adquisicion.strftime('%d-%m-%Y')
             mac = self.__vista.valor_mac
             hora_inicio = self.__vista.valor_hora_inicio
             hora_final = self.__vista.valor_hora_final
-
             computadora = ComputadoraInternet(nombre_red, ip, local, microprocesador, espacio_disco_duro, ram_integrada, fecha_adquisicion, mac, hora_inicio, hora_final)
             self.__modelo.actualizar_computadora_internet(nombre_red_ant, computadora)
 
@@ -109,7 +114,7 @@ class PresentadorComputadorasInternet:
             self.__vista.valor_microprocesador = microprocesador
             self.__vista.valor_espacio_disco_duro = espacio_disco_duro
             self.__vista.valor_ram_integrada = ram_integrada
-            self.__vista.valor_fecha_adquisicion = fecha_adquisicion
+            self.__vista.valor_fecha_adquisicion = QDate.fromString(fecha_adquisicion, "yyyy-MM-dd")
             self.__vista.valor_mac = mac
             self.__vista.valor_hora_inicio = hora_inicio
             self.__vista.valor_hora_final = hora_final

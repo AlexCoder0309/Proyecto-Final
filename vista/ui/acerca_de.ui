@@ -17,10 +17,14 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Acerca de</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../imgs/logo1.png</normaloff>../imgs/logo1.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">  background-color: #4070f4;</string>
+   <string notr="true">background-color:white;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">

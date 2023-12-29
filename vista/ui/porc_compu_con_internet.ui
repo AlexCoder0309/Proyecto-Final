@@ -11,10 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Porcentaje de Computadoras con Internet</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../imgs/logo1.png</normaloff>../imgs/logo1.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">  background-color: #4070f4;</string>
+   <string notr="true">  background-color:white;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -104,13 +108,13 @@ font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
   padding: 10px;
   border-radius: 6px;
   line-height: 18px;
-  background-color: #4070f4;
+background-color:rgb(225, 81, 81);
   color:white;
 font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;
 margin:0 150px 10px 150px;}
 
 QPushButton:hover{
-  background-color: darkblue;}</string>
+  background-color: rgb(113, 40, 40);}</string>
            </property>
            <property name="text">
             <string>Calcular Porcentaje</string>

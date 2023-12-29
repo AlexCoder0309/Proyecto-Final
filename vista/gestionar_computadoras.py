@@ -1,6 +1,8 @@
+from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QMessageBox, QTableWidgetItem, QDialog
 from PyQt5 import uic
-from PyQt5.QtCore import QDate
+from datetime import datetime
+import socket
 
 
 
@@ -9,7 +11,7 @@ class CRUDComputadoras(QDialog):
         self.__presentador = presentador
         QDialog.__init__(self)
         uic.loadUi('vista/ui/gest_compu.ui', self) 
-        self.setMinimumSize(1250, 850)
+        self.setMinimumSize(1150, 750)
 
 
         self.btn_insertar.clicked.connect(self.__presentador.insertar_computadora)
@@ -126,6 +128,15 @@ class CRUDComputadoras(QDialog):
 
         if len(self.date_fecha_adquisicion.text()) == 0:
             raise Exception('La fecha de adquisición es obligatoria.')
+        
+        if self.valor_fecha_adquisicion > datetime.today():
+            raise Exception('La fecha de adquisición no puede ser mayor que la fecha actual.')
+        
+        try:
+            socket.inet_pton(socket.AF_INET, self.valor_ip)
+        except socket.error:
+            raise Exception('La dirección IP es incorrecta')
+
         
     def restablecer_controles(self):
         self.valor_nombre_red = ''

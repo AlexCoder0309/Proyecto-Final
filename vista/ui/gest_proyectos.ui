@@ -17,10 +17,14 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Gestionar Proyectos</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../imgs/logo1.png</normaloff>../imgs/logo1.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">  background-color: #4070f4;</string>
+   <string notr="true">background-color:white;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -68,12 +72,12 @@ background-color:white;</string>
   padding: 10px;
   border-radius: 6px;
   line-height: 18px;
-  background-color: #4070f4;
+background-color:rgb(225, 81, 81);
   color:white;
 font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;}
 
 QPushButton:hover{
-  background-color: darkblue;}</string>
+    background-color: rgb(113, 40, 40);}</string>
            </property>
            <property name="text">
             <string>Insertar</string>
@@ -88,12 +92,12 @@ QPushButton:hover{
   padding: 10px;
   border-radius: 6px;
   line-height: 18px;
-  background-color: #4070f4;
+background-color:rgb(225, 81, 81);
   color:white;
 font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;}
 
 QPushButton:hover{
-  background-color: darkblue;}</string>
+  background-color: rgb(113, 40, 40);}</string>
            </property>
            <property name="text">
             <string>Actualizar</string>
@@ -108,12 +112,12 @@ QPushButton:hover{
   padding: 10px;
   border-radius: 6px;
   line-height: 18px;
-  background-color: #4070f4;
+background-color:rgb(225, 81, 81);
   color:white;
 font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;}
 
 QPushButton:hover{
-  background-color: darkblue;}</string>
+  background-color: rgb(113, 40, 40);}</string>
            </property>
            <property name="text">
             <string>Eliminar</string>
@@ -128,12 +132,12 @@ QPushButton:hover{
   padding: 10px;
   border-radius: 6px;
   line-height: 18px;
-  background-color: #4070f4;
+background-color:rgb(225, 81, 81);
   color:white;
 font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;}
 
 QPushButton:hover{
-  background-color: darkblue;}</string>
+  background-color: rgb(113, 40, 40);}</string>
            </property>
            <property name="text">
             <string>Cerrar</string>
@@ -204,7 +208,7 @@ color: #333;
 }
 
 QLineEdit:focus{
-border: 1px solid #007acc;
+border: 1px solid rgb(225, 81, 81);
 
 }
 </string>
@@ -229,9 +233,31 @@ border: 1px solid #007acc;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 7pt &quot;Bahnschrift Light SemiCondensed&quot;;
+         <string notr="true">QRadioButton{font: 7pt &quot;Bahnschrift Light SemiCondensed&quot;;
 margin: 0 5px 0 5px;
 
+
+padding:5px;
+    border-radius:          10px;
+}
+
+QRadioButton::indicator {
+    width:                  10px;
+    height:                 10px;
+    border-radius:          10px;
+padding:5px;
+}
+
+QRadioButton::indicator:checked {
+    background-color:      rgb(225, 81, 81);
+
+}
+
+QRadioButton::indicator:unchecked {
+    background-color:       #f3f3f3;
+border-radius: 10px;
+    border:                 1px solid #bbbbbb;
+}
 </string>
         </property>
         <property name="text">
@@ -251,10 +277,32 @@ margin: 0 5px 0 5px;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 7pt &quot;Bahnschrift Light SemiCondensed&quot;;
+         <string notr="true">QRadioButton{font: 7pt &quot;Bahnschrift Light SemiCondensed&quot;;
 margin: 0 5px 0 5px;
 
-</string>
+
+
+padding:5px;
+    border-radius:          10px;
+}
+
+QRadioButton::indicator {
+    width:                  10px;
+    height:                 10px;
+    border-radius:          10px;
+padding:5px;
+}
+
+QRadioButton::indicator:checked {
+    background-color:      rgb(225, 81, 81);
+
+}
+
+QRadioButton::indicator:unchecked {
+    background-color:       #f3f3f3;
+border-radius: 10px;
+    border:                 1px solid #bbbbbb;
+}</string>
         </property>
         <property name="text">
          <string>Si</string>
@@ -288,7 +336,7 @@ color: #333;
 }
 
 QLineEdit:focus{
-border: 1px solid #007acc;
+border: 1px solid rgb(225, 81, 81);
 
 }
 </string>
@@ -315,7 +363,7 @@ color: #333;
 }
 
 QLineEdit:focus{
-border: 1px solid #007acc;
+border: 1px solid rgb(225, 81, 81);
 
 }
 </string>
@@ -378,7 +426,7 @@ color: #333;
 }
 
 QLineEdit:focus{
-border: 1px solid #007acc;
+border: 1px solid rgb(225, 81, 81);
 
 }
 </string>

@@ -7,7 +7,6 @@ class Facultad:
         self.__lista_computadoras_internet = []
         self.__lista_proyectos = []
         self.__lista_locales = []
-        self.__lista_usuarios = []
         self.__lista_vinculadas = []
 
     
@@ -198,3 +197,9 @@ class Facultad:
                 self.__lista_vinculadas.remove(vinculada)
                 return self.__lista_vinculadas
         return self.__lista_vinculadas
+
+    def existe_valor_en_lista(self, lista, atributo, valor):
+        for obj in lista:
+            if getattr(obj, atributo) == valor:
+                return True
+        return False

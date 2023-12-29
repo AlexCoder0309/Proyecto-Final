@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QMessageBox
-from PyQt5.QtCore import QDateTime, QDate
+from PyQt5.QtCore import QDate
 from modelo.computadora import Computadora
 from vista.gestionar_computadoras import CRUDComputadoras
 
@@ -37,6 +37,10 @@ class PresentadorComputadoras:
             ram_integrada = self.__vista.valor_ram_integrada
             fecha_adquisicion = self.__vista.valor_fecha_adquisicion.toPyDate()
             fecha_adquisicion = fecha_adquisicion.strftime('%d-%m-%Y')
+            if self.__facultad.existe_valor_en_lista(self.__facultad.lista_computadoras(), 'ip', ip):
+                raise Exception('La dirección IP ya existe. Ingrese una dirección IP única.')
+            if self.__facultad.existe_valor_en_lista(self.__facultad.lista_computadoras_internet(), 'ip', ip):
+                raise Exception('La dirección IP ya existe en otra computadora. Ingrese una dirección IP única.')
             nueva_computadora = Computadora(nombre_red, ip, local, microprocesador, espacio_disco_duro, ram_integrada, fecha_adquisicion)
             self.__facultad.insertar_computadora(nueva_computadora)
             self.cargar_datos()

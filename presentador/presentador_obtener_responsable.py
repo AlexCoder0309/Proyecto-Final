@@ -16,7 +16,7 @@ class PresentadorObtenerComputadorasResponsable:
         nombre_responsable = self.__vista.valor_responsable
 
         if not nombre_responsable:
-            self.__vista.valor_respuesta = 'No hay computadoras asignadas a ningun responsable'
+            self.__vista.valor_respuesta = 'No hay computadoras asignadas a ningún responsable'
             return
 
         computadoras_docentes = self.__facultad.obtener_computadoras_docentes_con_internet_por_responsable(nombre_responsable)

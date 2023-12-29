@@ -11,10 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Obtener Computadoras de un Responsable</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../imgs/logo1.png</normaloff>../imgs/logo1.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">  background-color: #4070f4;</string>
+   <string notr="true">  background-color: white;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
@@ -92,7 +96,7 @@ margin: 10px 130px 0 130px
 }
 
 QLineEdit:focus{
-border: 1px solid #007acc;
+border: 1px solid rgb(225, 81, 81);
 
 }
 </string>
@@ -190,13 +194,13 @@ font: 9pt &quot;Bahnschrift Light SemiCondensed&quot;;
   padding: 10px;
   border-radius: 6px;
   line-height: 18px;
-  background-color: #4070f4;
+background-color:rgb(225, 81, 81);
   color:white;
 font: 10pt &quot;Bahnschrift Light SemiCondensed&quot;;
 margin:0 150px 10px 150px;}
 
 QPushButton:hover{
-  background-color: darkblue;}</string>
+  background-color: rgb(113, 40, 40);}</string>
            </property>
            <property name="text">
             <string>Obtener</string>

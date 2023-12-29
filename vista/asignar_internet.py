@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QDialog, QMessageBox
 from PyQt5.QtCore import QDateTime
 from PyQt5 import uic
+import re
 
 
 class AsignarInternet(QDialog):
@@ -31,7 +32,7 @@ class AsignarInternet(QDialog):
     def valor_respuesta(self):
         return self.respuesta.text().strip()
 
-    @valor_mac.setter
+    @valor_respuesta.setter
     def valor_respuesta(self, value):
         self.respuesta.setText(value)
         
@@ -57,6 +58,10 @@ class AsignarInternet(QDialog):
         msg = 'El atributo {} es obligatorio.'
         if len(self.valor_ip) == 0:
             raise ValueError(msg.format('IP'))
+        if len(self.valor_mac) == 0:
+            raise ValueError(msg.format('MAC'))
+        if not re.match("^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", self.valor_mac):
+            raise Exception('La dirección MAC no es correcta')
         
     def restablecer_controles(self):
         self.valor_ip = ''

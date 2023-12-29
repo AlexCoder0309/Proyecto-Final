@@ -30,6 +30,8 @@ class PresentadorLocales:
             tipo_local = self.__vista.valor_tipo_local
             es_docente = self.__vista.valor_es_docente
             responsable = self.__vista.valor_responsable
+            if self.__facultad.existe_valor_en_lista(self.__facultad.lista_locales(), 'nombre_local', nombre_local):
+                raise Exception('No pueden existir dos locales con el mismo nombre.')
             local = Local(nombre_local, tipo_local, es_docente, responsable)
             self.__facultad.insertar_local(local)
             self.cargar_datos()

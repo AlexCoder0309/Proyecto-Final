@@ -32,7 +32,8 @@ class PresentadorProyectos:
             linea_investigacion = self.__vista.valor_linea_investigacion
             tiempo_duracion_proyecto = self.__vista.valor_tiempo_duracion_proyecto
             jefe_proyecto = self.__vista.valor_jefe_proyecto
-
+            if self.__facultad.existe_valor_en_lista(self.__facultad.lista_proyectos(), 'nombre_proyecto', nombre_proyecto):
+                raise Exception('No pueden existir dos proyectos con el mismo nombre.')
             proyecto = Proyecto(nombre_proyecto, es_internacional, linea_investigacion, tiempo_duracion_proyecto, jefe_proyecto)
             self.__facultad.insertar_proyecto(proyecto)
 
@@ -54,7 +55,6 @@ class PresentadorProyectos:
             linea_investigacion = self.__vista.valor_linea_investigacion
             tiempo_duracion_proyecto = self.__vista.valor_tiempo_duracion_proyecto
             jefe_proyecto = self.__vista.valor_jefe_proyecto
-
             proyecto = Proyecto(nombre_proyecto, es_internacional, linea_investigacion, tiempo_duracion_proyecto, jefe_proyecto)
             self.__facultad.actualizar_proyecto(nombre_proyecto_ant, proyecto)
 

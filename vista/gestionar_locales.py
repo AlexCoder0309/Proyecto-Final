@@ -86,7 +86,7 @@ class CRUDLocales(QDialog):
         if not isinstance(self.valor_tipo_local, str) or len(self.valor_tipo_local) == 0:
             raise Exception("El tipo de local debe ser un texto no vacío.")
         if not (self.valor_responsable.isalpha()) or len(self.valor_responsable) == 0:
-            raise Exception("El responsable debe ser un texto no vacío.")
+            raise Exception("El nombre del responsable debe ser un texto no vacío y no contener números.")
         if not (self.rbtn_si.isChecked() or self.rbtn_no.isChecked()):
             raise Exception("Selecciona 'Si' o 'No' en la opción Es Docente.")
 

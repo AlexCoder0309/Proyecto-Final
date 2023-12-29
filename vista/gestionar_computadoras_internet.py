@@ -1,13 +1,16 @@
-from PyQt5.QtCore import QDateTime
+from PyQt5.QtCore import QDate, QDateTime
 from PyQt5.QtWidgets import QWidget, QMessageBox, QTableWidgetItem, QDialog
 from PyQt5 import uic
+from datetime import datetime
+import re
+import socket
 
 class CRUDComputadorasInternet(QDialog):
     def __init__(self, presentador):
         self.__presentador = presentador
         QDialog.__init__(self)
         uic.loadUi('vista/ui/gest_compu_con_internet.ui', self)
-        self.setMinimumSize(1250, 850)
+        self.setMinimumSize(1150, 750)
 
         self.btn_insertar.clicked.connect(self.__presentador.insertar_computadora_internet)
         self.btn_actualizar.clicked.connect(self.__presentador.actualizar_computadora_internet)
@@ -17,7 +20,7 @@ class CRUDComputadorasInternet(QDialog):
 
 
         self.tabla_computadoras_internet.setColumnCount(10)
-        self.tabla_computadoras_internet.setHorizontalHeaderLabels(['Nombre Red', 'IP', 'Local', 'Microprocesador', 'Espacio Disco Duro', 'RAM Integrada', 'Fecha Adquisición', 'MAC', 'Hora Inicio', 'Hora Final'])
+        self.tabla_computadoras_internet.setHorizontalHeaderLabels(['Nombre Red', 'IP', 'Local', 'Microprocesador', 'Espacio Disco Duro', 'RAM Integrada', 'Fecha', 'MAC', 'Hora Inicio', 'Hora Final'])
         self.tabla_computadoras_internet.resizeColumnsToContents()
 
     @property
@@ -82,12 +85,13 @@ class CRUDComputadorasInternet(QDialog):
         
     @property
     def valor_fecha_adquisicion(self):
-        return self.date_fecha_adquisicion.dateTime().toString("dd-MM-yyyy")
+        return self.date_fecha_adquisicion.date()
 
     @valor_fecha_adquisicion.setter
     def valor_fecha_adquisicion(self, value):
-        datetime = QDateTime.fromString(value, "dd-MM-yyyy")
-        self.date_fecha_adquisicion.setDateTime(datetime)
+        if isinstance(value, str):
+            value = QDate.fromString(value, "dd-MM-yyyy")
+        self.date_fecha_adquisicion.setDate(value)
         
     @property
     def valor_mac(self):
@@ -115,18 +119,6 @@ class CRUDComputadorasInternet(QDialog):
         datetime = QDateTime.fromString(value, "hh:mm")
         self.date_hora_final.setDateTime(datetime)
 
-    def validar_horas(self):
-            horas_iniciales, minutos_iniciales = self.valor_hora_inicio.split(":")
-            horas_iniciales = float(horas_iniciales)
-            minutos_iniciales = float(minutos_iniciales)
-            minutos_iniciales /= 60
-            horas_finales, minutos_finales = self.valor_hora_final.split(":")
-            horas_finales = float(horas_finales)
-            minutos_finales = float(minutos_finales)
-            minutos_finales /= 60
-            hora_terminacion = horas_finales + minutos_finales
-            horas_iniciacion = horas_iniciales + minutos_iniciales 
-            return horas_iniciacion <= hora_terminacion
 
     def validar_controles(self):
         msg = 'El atributo {} es obligatorio.'
@@ -166,8 +158,15 @@ class CRUDComputadorasInternet(QDialog):
         if len(self.date_fecha_adquisicion.text()) == 0:
             raise Exception('La fecha de adquisición es obligatoria.')
         
-        if not self.validar_horas():
-            raise Exception('La hora de inicio no puede ser mayor que la hora final.')
+        if self.valor_fecha_adquisicion > datetime.today():
+            raise Exception('La fecha de adquisición no puede ser mayor que la fecha actual.')
+        if not re.match("^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", self.valor_mac):
+            raise Exception('La dirección MAC no es correcta')
+        
+        try:
+            socket.inet_pton(socket.AF_INET, self.valor_ip)
+        except socket.error:
+            raise Exception('La dirección IP es incorrecta')
 
     def restablecer_controles(self):
         self.valor_nombre_red = ''

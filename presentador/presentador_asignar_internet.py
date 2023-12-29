@@ -20,7 +20,7 @@ class PresentadorAsignarInternet:
             if asignacion:
                 self.__vista.valor_respuesta = 'Se le asignó internet a la computadora correctamente'
             else:
-                self.__vista.valor_respuesta = 'No se encontro ninguna computadora sin internet con esa dirección IP'
+                self.__vista.valor_respuesta = 'No se encontró ninguna computadora sin internet con esa dirección IP'
         except ValueError as e:
             self.__vista.mostrar_error(str(e))
         except Exception as e:

@@ -77,8 +77,10 @@ class CRUDProyectos(QDialog):
         msg = 'Es necesario llenar todos los campos para poder insertar los datos en la tabla'
         if len(self.valor_nombre_proyecto) == 0:
             raise Exception(msg)
-        if len(self.valor_linea_investigacion) == 0:
-            raise Exception(msg)
+        
+        if len(self.valor_linea_investigacion) == 0 or not isinstance(self.valor_linea_investigacion, str):
+            raise Exception("La línea de investigación debe ser una cadena de texto.")
+
         try:
             tiempo_duracion = int(self.valor_tiempo_duracion_proyecto)
             if tiempo_duracion <= 0:
@@ -86,10 +88,12 @@ class CRUDProyectos(QDialog):
         except ValueError:
             raise ValueError("El tiempo de duración debe ser un número entero.")
 
-        if len(self.valor_jefe_proyecto) == 0:
-            raise Exception(msg)
+        if len(self.valor_jefe_proyecto) == 0 or not isinstance(self.valor_jefe_proyecto, str):
+            raise Exception("El jefe de proyecto debe ser una cadena de texto.")
+
         if not (self.rbtn_si.isChecked() or self.rbtn_no.isChecked()):
             raise Exception(msg)
+
         
     def restablecer_controles(self):
         self.valor_nombre_proyecto = ''

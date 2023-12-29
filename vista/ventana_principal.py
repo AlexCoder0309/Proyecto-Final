@@ -18,9 +18,9 @@ class VentanaPrincipal(QMainWindow):
         self.btn_funcionalidades.clicked.connect(self.mostrar_menu_funcionalidades)
         self.btn_acerca.clicked.connect(self.__presentador.presentador_acerca_de)
 
-        estilos = ("QMenu {background-color:white;border-radius:5px;border-color: #4070f4;font: 9pt 'Bahnschrift Light SemiCondensed';}"
-                                            "QMenu::item {background-color:white; padding: 8px 16px;border-radius:5px;border-color: #4070f4;font: 9pt 'Bahnschrift Light SemiCondensed'; }"
-                                            "QMenu::item:selected { background-color: #4070f4;; color: #ffffff;border: 1px solid white; border-radius:5px;border-color: #4070f4;font: 9pt 'Bahnschrift Light SemiCondensed';}")
+        estilos = ("QMenu {background-color:white;border-radius:5px;border-color: rgb(225, 81, 81);font: 9pt 'Bahnschrift Light SemiCondensed';}"
+                                            "QMenu::item {background-color:white; padding: 8px 16px;border-radius:5px;border-color: rgb(225, 81, 81);font: 9pt 'Bahnschrift Light SemiCondensed'; }"
+                                            "QMenu::item:selected { background-color: rgb(225, 81, 81); color: #ffffff;border: 1px solid white; border-radius:5px;border-color: rgb(225, 81, 81);font: 9pt 'Bahnschrift Light SemiCondensed';}")
         # Crear un menú desplegable
         self.menu_gestionar = QMenu(self)
         self.menu_gestionar.setStyleSheet(estilos)
@@ -38,7 +38,7 @@ class VentanaPrincipal(QMainWindow):
         self.menu_funcionalidades.addAction("Computadoras por Responsable", self.__presentador.presentador_obtener_responsable)
         self.menu_funcionalidades.addAction("Porciento de Computadoras con Internet", self.__presentador.presentador_porcentaje_computadoras)
         self.menu_funcionalidades.addAction("Vincular Computadora a Proyectos", self.__presentador.presentador_vincular_computadoras_proyectos)
-        self.frame_imagen = self.findChild(QFrame, 'frame_imagen')
+
     def mostrar_menu_gestionar(self):
         # Mostrar el menú desplegable en las coordenadas actuales del botón
         self.menu_gestionar.exec_(self.btn_gestionar.mapToGlobal(self.btn_gestionar.rect().bottomLeft()))
@@ -49,21 +49,19 @@ class VentanaPrincipal(QMainWindow):
 
 
 
-    def resizeEvent(self, a0):
-        # Asegurarse de que el QFrame esté presente y visible
-        if not self.frame_imagen:
-            return
-
-        # Obtener el tamaño del frame_imagen
-        width = self.frame_imagen.width()
-        height = self.frame_imagen.height()
-
-        # Escalar la imagen al tamaño del frame_imagen
-        background = QPixmap('vista/imgs/2.jpeg')
-        background = background.scaled(QSize(width, height), Qt.IgnoreAspectRatio)
-
-        # Crear un pincel con la imagen escalada
-        pal = self.frame_imagen.palette()
+    def resizeEvent(self, event):
+        '''
+        método especial de PyQt5 para ser disparada cuando se redimensione
+        la pantalla
+        '''
+        #cargando mapa de pixeles con ruta del fondo en background
+        background = QPixmap('vista/imgs/fondo1.jpg')
+        background = background.scaled(self.size(),Qt.IgnoreAspectRatio)
+        #estableciendo el escalado de la imagen
+        #cargando paleta en variable pal
+        pal = self.palette()
+        #estableciendo tipo de paleta
         pal.setBrush(QPalette.Background, QBrush(background))
-        self.frame_imagen.setPalette(pal)
-        self.frame_imagen.setMask(background.mask())
+        #poniendo paleta en la ventana principal
+        self.setPalette(pal)
+        

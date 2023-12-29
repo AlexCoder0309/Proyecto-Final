@@ -10,12 +10,12 @@ class VincularComputadorasProyectos(QDialog):
         uic.loadUi('vista/ui/vincu_compu_proyectos.ui', self) 
         self.setMinimumSize(800, 600)
 
-        self.btn_vincular.clicked.connect(self.__presentador.cargar_datos)
+        self.btn_vincular.clicked.connect(self.__presentador.insertar_datos)
         self.btn_desvincular.clicked.connect(self.__presentador.desvincular_computadora_proyecto)
 
 
         self.tabla_vinculacion.setColumnCount(3)
-        self.tabla_vinculacion.setHorizontalHeaderLabels(['Nombre Proyecto', 'Nombre Computadora', 'Lista de Usuarios'])
+        self.tabla_vinculacion.setHorizontalHeaderLabels(['Nombre Proyecto', 'IP Computadora', 'Lista de Usuarios'])
         self.tabla_vinculacion.resizeColumnsToContents()
 
     @property

@@ -15,11 +15,9 @@ class PresentadorPorCientoDesgaste:
             ip = self.__vista.valor_ip
             desgaste = self.__facultad.calcular_desgaste(ip)  
             if desgaste == None:
-                self.__vista.valor_porcentaje = 'No se ha encontrado ninguna computadora con esa IP'
+                self.__vista.valor_porcentaje = 'No se ha encontrado ninguna computadora con esa dirección IP'
             else:
                 msg = 'El porcentaje de desgaste es de: {}%'.format(desgaste)
                 self.__vista.valor_porcentaje = msg
-        except ValueError as e:
-            self.__vista.mostrar_error(str(e))
         except Exception as e:
             self.__vista.mostrar_error('Error desconocido: {}'.format(str(e)))

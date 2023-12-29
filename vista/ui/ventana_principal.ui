@@ -6,22 +6,38 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1250</width>
+    <height>850</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1100</width>
+    <height>700</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Menú Principal</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../imgs/logo1.png</normaloff>../imgs/logo1.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow:titleBar {
+    background-color: red;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QFrame" name="frame_2">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="frame_3">
       <property name="styleSheet">
-       <string notr="true">background-color:gray;</string>
+       <string notr="true">background-color:rgba(255,255,255,0.3);
+border-radius:5px;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -29,146 +45,131 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QFrame" name="frame_imagen">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <item>
-           <widget class="QFrame" name="frame_3">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgba(255,255,255,0.4);
-border-radius:5px;</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout">
-             <item>
-              <widget class="QPushButton" name="btn_gestionar">
-               <property name="styleSheet">
-                <string notr="true">padding:8px;
-margin:5px;
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="btn_gestionar">
+         <property name="styleSheet">
+          <string notr="true">padding:8px;
 font: 11pt &quot;Bahnschrift&quot;;
+margin: 0 0 0 10px;
 background-color:rgba(255,255,255,0);</string>
-               </property>
-               <property name="text">
-                <string>Gestionar</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../imgs/gestionar.png</normaloff>../imgs/gestionar.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>50</width>
-                 <height>50</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btn_funcionalidades">
-               <property name="styleSheet">
-                <string notr="true">padding:8px;
-background-color: rgba(255, 255, 255, 0);
-margin:5px;
-font: 12pt &quot;Bahnschrift&quot;;</string>
-               </property>
-               <property name="text">
-                <string>Funcionalidades</string>
-               </property>
-               <property name="icon">
-                <iconset resource="../imgs/imagen.qrc">
-                 <normaloff>:/iconos/funcionalidades.png</normaloff>:/iconos/funcionalidades.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>30</width>
-                 <height>30</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btn_acerca">
-               <property name="styleSheet">
-                <string notr="true">padding:8px;
-font: 12pt &quot;Courier New&quot;;
-background-color: rgba(255, 255, 255, 0);
-margin:5px;
-font: 12pt &quot;Bahnschrift&quot;;</string>
-               </property>
-               <property name="text">
-                <string>Acerca de</string>
-               </property>
-               <property name="icon">
-                <iconset resource="../imgs/imagen.qrc">
-                 <normaloff>:/iconos/acerca.png</normaloff>:/iconos/acerca.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>30</width>
-                 <height>30</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_3">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>470</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
+         </property>
+         <property name="text">
+          <string>Gestionar</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../imgs/gestionar.png</normaloff>../imgs/gestionar.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
         </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_funcionalidades">
+         <property name="styleSheet">
+          <string notr="true">padding:8px;
+background-color: rgba(255, 255, 255, 0);
+margin: 0 0 0 10px;
+font: 11pt &quot;Bahnschrift&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Funcionalidades</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../imgs/imagen.qrc">
+           <normaloff>:/iconos/funcionalidades.png</normaloff>:/iconos/funcionalidades.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_acerca">
+         <property name="styleSheet">
+          <string notr="true">padding:8px;
+background-color: rgba(255, 255, 255, 0);
+margin: 0 0 0 10px;
+font: 11pt &quot;Bahnschrift&quot;;
+</string>
+         </property>
+         <property name="text">
+          <string>Acerca de</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../imgs/imagen.qrc">
+           <normaloff>:/iconos/acerca.png</normaloff>:/iconos/acerca.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>195</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>194</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>234</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>234</height>
+       </size>
+      </property>
+     </spacer>
     </item>
    </layout>
   </widget>
